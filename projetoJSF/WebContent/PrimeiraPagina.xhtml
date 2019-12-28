@@ -5,19 +5,21 @@
 
 <h:head>
 	<title>Ola fabio.</title>
-
 </h:head>
 <h:body>
 
-<h1>meu 1 projeto</h1>
+<h1>meu 1 projeto.</h1>
 
 	<h:form id="formPessoa">
 		Nome:
 		<h:inputText id="campoNome" value="#{pessoaBean.nome}"/>
-		<h:inputSecret id="senha" value="#{pessoaBean.senha}"/>
-		<h:inputTextarea id="texto" value="#{pessoaBean.texto}" />
+		<h:commandButton binding="#{pessoaBean.commandButton}" value="Adicionar" action="#{pessoaBean.addNome}"/>
 		
-		<h:commandButton value="Adicionar" action="#{pessoaBean.addNome}"/>
+		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
+			<h:column>
+				<h:outputText value="#{nome}"/>
+			</h:column>
+		</h:dataTable>
 	</h:form>
 </h:body>
 </html>

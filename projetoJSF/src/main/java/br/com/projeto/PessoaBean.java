@@ -15,6 +15,8 @@ import javax.faces.component.html.HtmlCommandButton;
 public class PessoaBean {
 
 	private String nome;
+	private String senha;
+	private String texto;
 	private HtmlCommandButton commandButton;	
 	private List<String> nomes = new ArrayList<String>();
 
@@ -25,9 +27,10 @@ public class PessoaBean {
 		
 		if(nomes.size() > 3) {
 			commandButton.setDisabled(true);
+			return "PrimeiraPagina2?faces-redirect=true";
 		}
 		
-		return "";
+		return null;
 	}
 
 	public String getNome() {
@@ -52,6 +55,22 @@ public class PessoaBean {
 
 	public void setCommandButton(HtmlCommandButton commandButton) {
 		this.commandButton = commandButton;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
 	}
 
 	
